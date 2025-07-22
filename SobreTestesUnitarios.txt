@@ -1,0 +1,47 @@
+O que são Testes Unitários?
+--------------------------
+
+Testes unitários são pequenos trechos de código criados para verificar se partes específicas de um programa (geralmente funções ou métodos) estão funcionando corretamente. Eles ajudam a garantir que cada componente do sistema faz exatamente o que deveria fazer, facilitando a identificação de erros e a manutenção do código.
+
+Por que usar Testes Unitários?
+-----------------------------
+- Garantem que o código funciona como esperado.
+- Facilitam a identificação de bugs rapidamente.
+- Permitem refatorar o código com mais segurança.
+- Servem como documentação do comportamento esperado dos métodos.
+
+Como foram implementados neste projeto?
+--------------------------------------
+
+Neste projeto, os testes unitários foram implementados usando a biblioteca JUnit, uma das mais populares para testes em Java. Os testes estão no arquivo:
+
+    test/java/CalculatorTest.java
+
+Cada método da classe Calculator possui pelo menos um teste correspondente. Veja como foi feito:
+
+1. **Criação da classe de teste:**
+   - Foi criada a classe CalculatorTest.
+   - Dentro dela, foi criada uma instância da classe Calculator para ser usada nos testes.
+
+2. **Escrita dos métodos de teste:**
+   - Cada método de teste é anotado com @Test.
+   - São usados métodos do JUnit como assertEquals, assertTrue, assertFalse e assertThrows para verificar se o resultado dos métodos está correto.
+
+Exemplo de teste para divisão:
+-----------------------------
+
+@Test
+void testDivision() {
+    assertEquals(5, calculator.division(10, 2)); // Verifica se 10 / 2 = 5
+    assertThrows(ArithmeticException.class, () -> calculator.division(10, 0)); // Verifica se lançar exceção ao dividir por zero
+}
+
+Outros exemplos:
+----------------
+- Teste para soma de números positivos e negativos.
+- Teste para verificar se os números são positivos ou negativos.
+- Teste para garantir que não é possível dividir por zero.
+
+Resumo:
+-------
+Os testes unitários garantem que a calculadora funciona corretamente e que possíveis erros sejam detectados rapidamente. Eles são essenciais em qualquer projeto de software profissional. 
